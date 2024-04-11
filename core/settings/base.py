@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 DJANGO_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,3 +80,9 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
